@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 11:03:44 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/23 17:59:16 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/23 18:09:36 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (yas);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	if (!s)
 		return (NULL);
