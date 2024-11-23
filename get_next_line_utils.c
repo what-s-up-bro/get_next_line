@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/23 10:17:05 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/23 17:50:28 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (ft_strdup(s1));
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
-	yas = malloc(((j + i + 1) * sizeof(char)));
+	yas = malloc(j + i + 1);
 	if (!yas)
 		return (NULL);
 	ft_strcpy(yas, s1);
 	ft_strcat(yas, s2);
-	free (yas);
 	return (yas);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	while (*s)
 	{
 		if (*s == (char)c)
@@ -99,6 +100,5 @@ char	*ft_strdup(const char *src)
 		j++;
 	}
 	yas[i] = '\0';
-	free (yas);
 	return (yas);
 }

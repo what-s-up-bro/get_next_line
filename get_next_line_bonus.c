@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 11:00:59 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/23 11:03:37 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/23 18:01:09 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ char	*ft_return(char *s)
 	if (s[i] == '\n')
 		new_ret[j++] = '\n';
 	new_ret[j] = '\0';
-	free (s);
 	return (new_ret);
 }
 
@@ -73,16 +72,17 @@ char	*ft_after_new_line(char *s)
 char	*get_next_line(int fd)
 {
 	int				i;
-	char			readed;
+	char			*readed;
 	static char		*save;
+	char			*line;
 
-	i = 1;
-	if (BUFFER_SIZE <= 0 || fd < 0)
+	if (BUFFER_SIZE <= 0 || fd < 0 || fd > 1024)
 		return (NULL);
 	readed = malloc(BUFFER_SIZE + 1);
 	if (!readed)
 		return (NULL);
-	while (!ft_strchar(save, '\n') && i > 0)
+	i = 1;
+	while (!(ft_strchr(save, '\n')) && i > 0)
 	{
 		i = read(fd, readed, BUFFER_SIZE);
 		if (i < 0)
@@ -93,5 +93,5 @@ char	*get_next_line(int fd)
 	free (readed);
 	line = ft_return(save);
 	save = ft_after_new_line(save);
-	return (save);
+	return (line);
 }
