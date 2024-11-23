@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/23 10:17:05 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/11/23 11:03:44 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/11/23 11:04:52 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strcpy(char *dest, char const *src)
 {
