@@ -6,15 +6,15 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/22 11:12:27 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/22 17:43:53 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_strcpy(char *dest, char const *src)
+char	*ft_strcpy(char *dest, char const *src)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (src[i])
@@ -26,10 +26,10 @@ static char	*ft_strcpy(char *dest, char const *src)
 	return (dest);
 }
 
-static char	*ft_strcat(char *dest, char const *src)
+char	*ft_strcat(char *dest, char const *src)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -48,8 +48,8 @@ static char	*ft_strcat(char *dest, char const *src)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 	char	*yas;
 
 	if (!s1 && !s2)
@@ -85,8 +85,8 @@ char	*ft_strchr(const char *s, int c)
 char	*ft_strdup(const char *src)
 {
 	char	*yas;
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
 	i = ft_strlen(src);
 	yas = malloc(i + 1);
