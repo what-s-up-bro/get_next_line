@@ -6,13 +6,13 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/23 18:09:16 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/24 12:17:35 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strcpy(char *dest, char const *src)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ char	*ft_strcpy(char *dest, char const *src)
 	return (dest);
 }
 
-char	*ft_strcat(char *dest, char const *src)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 	int	j;
@@ -46,7 +46,7 @@ char	*ft_strcat(char *dest, char const *src)
 	return (dest);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
@@ -55,7 +55,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-		return (ft_strdup(s2));
+		return (free(s1), s1 = NULL, NULL);
 	if (!s2)
 		return (ft_strdup(s1));
 	i = ft_strlen(s1);
@@ -65,10 +65,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strcpy(yas, s1);
 	ft_strcat(yas, s2);
+	free (s1);
 	return (yas);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	if (!s)
 		return (NULL);
@@ -83,7 +84,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(char *src)
 {
 	char	*yas;
 	int		i;
