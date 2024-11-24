@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/24 13:11:58 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/24 15:06:41 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strcpy(char *dest, char *src)
 	int	i;
 
 	i = 0;
+	if (!dest || !src)
+		return (NULL);
 	while (src[i])
 	{
 		dest[i] = src[i];
@@ -33,10 +35,10 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	j = 0;
+	if (!dest || !src)
+		return (NULL);
 	while (dest[i])
-	{
 		i++;
-	}
 	while (src[j])
 	{
 		dest[i + j] = src[j];
@@ -79,9 +81,9 @@ char	*ft_strchr(char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == (char)c)
+	if (c == '\0')
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }
 
 char	*ft_strdup(char *src)
@@ -90,6 +92,8 @@ char	*ft_strdup(char *src)
 	int		i;
 	int		j;
 
+	if (!src)
+		return (NULL);
 	i = ft_strlen(src);
 	yas = malloc(i + 1);
 	if (!yas)
