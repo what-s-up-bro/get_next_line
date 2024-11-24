@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/24 12:17:35 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/24 13:11:58 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-		return (free(s1), s1 = NULL, NULL);
+		return (ft_strdup(s2));
 	if (!s2)
 		return (ft_strdup(s1));
 	i = ft_strlen(s1);
