@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 14:37:47 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/25 09:43:33 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/11/25 09:31:12 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/11/25 09:44:01 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char *s)
 {
@@ -79,25 +79,25 @@ char	*get_next_line(int fd)
 {
 	int			i;
 	char		*readed;
-	static char	*save;
+	static char	*save[FD_MAX];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (free(save), save = NULL, NULL);
+		return (free(save[fd]), save[fd] = NULL, NULL);
 	readed = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!readed)
-		return (free(save), save = NULL, NULL);
+		return (free(save[fd]), save[fd] = NULL, NULL);
 	i = 1;
-	while (!(ft_strchr(save, '\n')) && i > 0)
+	while (!(ft_strchr(save[fd], '\n')) && i > 0)
 	{
 		i = read(fd, readed, BUFFER_SIZE);
 		if (i < 0)
-			return (free(readed), free(save), save = NULL, NULL);
+			return (free(readed), free(save[fd]), save[fd] = NULL, NULL);
 		readed[i] = '\0';
-		save = ft_strjoin(save, readed);
+		save[fd] = ft_strjoin(save[fd], readed);
 	}
 	free(readed);
-	line = ft_return(save);
-	save = ft_after_new_line(save);
+	line = ft_return(save[fd]);
+	save[fd] = ft_after_new_line(save[fd]);
 	return (line);
 }
