@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:33:03 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/25 09:34:28 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:34:35 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 7
+# endif
+
+# if BUFFER_SIZE > 2147483645
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 0
+
 # endif
 
 # ifndef FD_MAX

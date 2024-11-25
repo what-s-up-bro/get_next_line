@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:37:47 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/25 09:43:33 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:30:23 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (free(save), save = NULL, NULL);
-	readed = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	readed = malloc(BUFFER_SIZE + 1);
 	if (!readed)
 		return (free(save), save = NULL, NULL);
 	i = 1;

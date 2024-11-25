@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:37:08 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/24 12:27:37 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:33:42 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 7
+# endif
+
+# if BUFFER_SIZE > 2147483645
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 0
+
 # endif
 
 # include <unistd.h>
