@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:38:20 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/25 14:30:54 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/25 16:23:57 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = ft_strlen(s2);
 	yas = malloc(j + i + 1);
 	if (!yas)
-		return (NULL);
+		return (free(s1), s1 = NULL, NULL);
 	ft_strcpy(yas, s1);
 	ft_strcat(yas, s2);
 	free (s1);

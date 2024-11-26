@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 14:37:47 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/25 14:30:23 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:06:42 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,16 @@ char	*ft_after_new_line(char *s)
 	while (s[i] && s[i] != '\n')
 		i++;
 	if (!s[i])
-		return (free(s), NULL);
+		return (free(s), s = NULL, NULL);
 	save = malloc(ft_strlen(s) - i);
 	if (!save)
-		return (free(s), NULL);
+		return (free(s), s = NULL, NULL);
 	i++;
 	while (s[i])
 		save[j++] = s[i++];
 	save[j] = '\0';
 	free(s);
+	s = NULL;
 	return (save);
 }
 
@@ -82,8 +83,8 @@ char	*get_next_line(int fd)
 	static char	*save;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (free(save), save = NULL, NULL);
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
 	readed = malloc(BUFFER_SIZE + 1);
 	if (!readed)
 		return (free(save), save = NULL, NULL);

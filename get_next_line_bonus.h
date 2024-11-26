@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:33:03 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/25 14:34:35 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:05:56 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 7
+#  define BUFFER_SIZE 2147483647
 # endif
 
-# if BUFFER_SIZE > 2147483645
+# if BUFFER_SIZE > 2147483646
 #  undef BUFFER_SIZE
 #  define BUFFER_SIZE 0
 
-# endif
-
-# ifndef FD_MAX
-#  define FD_MAX 1024
 # endif
 
 # include <unistd.h>
