@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:31:12 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/26 17:06:22 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:16:06 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,3 +101,33 @@ char	*get_next_line(int fd)
 	save[fd] = ft_after_new_line(save[fd]);
 	return (line);
 }
+
+// #include <stdio.h>
+// #include <fcntl.h>
+
+// int main()
+// {
+// 	int fd = open("test", O_RDONLY);
+// 	int fd1 = open("txt", O_RDONLY);
+// 	char *line;
+// 	line = get_next_line(fd);
+// 	printf("%s", line);
+// 	char *line1;
+// 	line1 = get_next_line(fd1);
+// 	printf("%s", line1);
+// 		line = get_next_line(fd);
+// 	printf("%s", line);
+// 	line1 = get_next_line(fd1);
+// 	printf("%s", line1);
+// 		line = get_next_line(fd);
+// 	printf("%s", line);
+// 	line1 = get_next_line(fd1);
+// 	printf("%s", line1);
+// 		line = get_next_line(fd);
+// 	printf("%s", line);
+// 	line1 = get_next_line(fd1);
+// 	printf("%s", line1);
+// 		line = get_next_line(fd);
+// 	printf("%s", line);
+// 	return (0);
+// }

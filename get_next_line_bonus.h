@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 09:33:03 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/26 17:05:56 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/27 10:16:33 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 2147483647
+#  define BUFFER_SIZE 2147483646
 # endif
 
 # if BUFFER_SIZE > 2147483646
